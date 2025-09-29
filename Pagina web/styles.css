@@ -1,0 +1,216 @@
+/* ======================================================
+   styles.css — Reestructurado y completo
+   Propósito: aplicar tipografías y colores coherentes, fondos,
+   modelos de caja en varios elementos y demostración de posicionamiento
+   ====================================================== */
+
+/* ------------------
+   Variables globales
+   ------------------ */
+:root {
+  --color-bg: #f8fafc;
+  --color-surface: #ffffff;
+  --color-primary: #0f172a; /* azul grisáceo muy oscuro */
+  --color-secondary: #475569; /* gris azulado */
+  --color-accent: #2563eb; /* azul */
+  --color-muted: #94a3b8;
+  --color-border: #e6eef7;
+
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  --text-base: 16px;
+  --text-lg: 18px;
+  --text-sm: 14px;
+}
+
+
+/* ======================================================
+   Reset / base
+   ====================================================== */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: var(--color-primary);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ a { color: var(--color-accent); text-decoration: none; }
+ a:hover { text-decoration: underline; }
+
+/* Asegurar scroll suave y que los headings no queden ocultos por el header sticky */
+html { scroll-behavior: smooth; }
+/* Ajusta el margen de scroll para que el inicio de cada sección deje visible el título
+    valor recomendado >= altura del header (h-16 = 4rem). Se usa 4.5rem para margen extra */
+section[id] { scroll-margin-top: 4.5rem; }
+
+/* Destacar momentáneamente la sección objetivo cuando se navega por anclas */
+section:target {
+   box-shadow: 0 0 0 4px rgba(37,99,235,0.06);
+   transition: box-shadow .35s ease-in-out;
+}
+
+
+/* ======================================================
+   Tipografías y estilos de texto
+   ====================================================== */
+h1 { font-size: 1.75rem; margin: 0 0 .5rem 0; }
+h2 { font-size: 1.5rem; margin: 0 0 .5rem 0; }
+h3 { font-size: 1.125rem; margin: 0 0 .5rem 0; }
+p { margin: 0 0 1rem 0; color: #334155; font-size: var(--text-lg); }
+.text-muted { color: var(--color-muted); font-size: var(--text-sm); }
+.text-center { text-align: center; }
+
+
+/* ======================================================
+   Fondos
+   ====================================================== */
+header.header-box { background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(248,250,252,0.98)); }
+.wireframe-box { background: var(--color-surface); }
+.hero-bg { background-image: linear-gradient(180deg, rgba(37,99,235,0.03), rgba(99,102,241,0.02)); }
+
+/* Tipografía más profesional: usar Poppins/Inter si están disponibles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+body { font-family: 'Poppins', var(--font-sans); }
+
+
+/* ======================================================
+   Modelo de cajas: margin, padding, border (ejemplos en 3+ elementos)
+   ====================================================== */
+/* Elemento 1: header */
+header.header-box {
+  padding: 0.75rem 0;             /* padding */
+  border-bottom: 1px solid var(--color-border); /* border */
+  margin-bottom: 0;               /* margin */
+}
+
+/* Elemento 2: sección principal (wireframe-box) */
+.wireframe-box {
+  padding: 1.5rem;                /* padding */
+  border-radius: 0.5rem;          /* border-radius */
+  margin: 1rem 0;                 /* margin */
+  border: 1px solid var(--color-border); /* border */
+}
+
+/* Elemento 3: tarjetas de proyecto */
+.project-card {
+  padding: 1rem;                  /* padding */
+  margin: .5rem 0;                /* margin */
+  border: 1px solid #d1d5db;      /* border */
+  border-radius: .5rem;
+}
+
+/* Tarjetas con estilo más llamativo */
+.project-card {
+   background: linear-gradient(180deg, #ffffff, #fbfdff);
+   border: 0;
+   box-shadow: 0 6px 18px rgba(15,23,42,0.08);
+   transition: transform .18s ease, box-shadow .18s ease;
+}
+.project-card:hover { transform: translateY(-6px); box-shadow: 0 18px 40px rgba(15,23,42,0.12); }
+
+/* Botones más llamativos */
+.btn-primary {
+   display: inline-block; padding: .6rem 1rem; border-radius: .5rem; background: linear-gradient(90deg,#2563eb,#7c3aed); color: #fff; border: none; cursor: pointer;
+   box-shadow: 0 8px 20px rgba(37,99,235,0.12); transition: transform .15s ease, box-shadow .15s ease;
+}
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 20px 48px rgba(37,99,235,0.18); }
+.btn-outline { padding: .55rem .95rem; border-radius: .5rem; border: 1px solid var(--color-secondary); background: transparent; color: var(--color-secondary); }
+
+/* Hero destacado para la sección sobre mí */
+.hero {
+   background: linear-gradient(120deg, rgba(99,102,241,0.06), rgba(124,58,237,0.03));
+   border-radius: .75rem; padding: 2rem; box-shadow: 0 10px 40px rgba(17,24,39,0.04);
+}
+
+/* Otro ejemplo (Elemento 4): formulario */
+.form-row { margin-bottom: .75rem; }
+form.contact-form input, form.contact-form textarea { padding: .6rem .9rem; border: 1px solid #d1d5db; border-radius: .375rem; }
+
+
+/* ======================================================
+   Componentes (header, about, proyectos, form, footer)
+   ====================================================== */
+
+/* Header */
+.logo-placeholder { height: 2rem; width: 2rem; background: var(--color-muted); border-radius: 9999px; display:inline-flex; align-items:center; justify-content:center; color:#fff; font-weight:700; }
+nav a { color: #374151; padding: .35rem .5rem; border-bottom: 2px solid transparent; transition: color .15s, border-color .15s; }
+nav a:hover { color: var(--color-primary); border-color: var(--color-secondary); }
+
+/* About */
+.profile-photo-placeholder { width: 12rem; height: 12rem; background: #d1d5db; border-radius: 9999px; border: 4px solid #9ca3af; display:flex; align-items:center; justify-content:center; }
+.about-text { color: #334155; font-size: var(--text-lg); }
+
+/* Tabla proyectos */
+.projects-table { width: 100%; border-collapse: collapse; }
+.projects-table th, .projects-table td { padding: .75rem 1rem; border-bottom: 1px solid #eef2f6; text-align: left; }
+.projects-table thead th { background: #f8fafc; font-weight:600; }
+
+/* Form */
+form.contact-form { max-width: 640px; margin: 0 auto; }
+.btn-submit { background: var(--color-primary); color: #fff; padding: .75rem 1rem; border-radius: .375rem; border: none; cursor: pointer; }
+.btn-submit:hover { background: #0b1220; }
+
+/* Footer */
+footer.header-box { border-top: 4px solid #d1d5db; background: #f3f4f6; padding: 1rem 0; text-align: center; }
+
+
+/* ======================================================
+   Posicionamiento básico y uso de float / background
+   ====================================================== */
+/* Float ejemplo: foto a la izquierda del texto en desktop */
+.profile-photo-placeholder.float-left { float: left; margin-right: 1rem; }
+
+/* Clearfix para limpiar floats */
+.clearfix::after { content: ""; display: table; clear: both; }
+
+/* Background ejemplo en hero */
+.hero { background: url('') center/cover no-repeat; }
+
+
+/* ======================================================
+   Responsive
+   ====================================================== */
+@media (max-width: 1024px) {
+  :root { --text-lg: 17px; }
+  .profile-photo-placeholder { width: 10rem; height: 10rem; }
+}
+
+@media (max-width: 768px) {
+  header.header-box { padding: .5rem 0; }
+  .wireframe-box { padding: 1rem; }
+  .profile-photo-placeholder { width: 9rem; height: 9rem; float: none; margin: 0 auto 1rem auto; display:block; }
+  nav { display:flex; justify-content:center; gap:.5rem; }
+  .projects-table th, .projects-table td { padding: .5rem; }
+}
+
+@media (max-width: 480px) {
+  html { font-size: 14px; }
+  h1 { font-size: 1.25rem; }
+  h2 { font-size: 1.1rem; }
+  .profile-photo-placeholder { width: 7.5rem; height: 7.5rem; }
+  .btn-submit { padding: .6rem; }
+}
+
+/* Fin de styles.css */
+
+/* ------------------------------------------------------
+   Estilos del carrusel (muestra uno a la vez)
+   ------------------------------------------------------ */
+.carousel { position: relative; overflow: hidden; }
+.carousel-track { display: flex; transition: transform .6s cubic-bezier(.22,.9,.29,1); }
+.carousel-slide { min-width: 100%; padding: 1rem; display: flex; justify-content: center; }
+.carousel-slide .project-card { max-width: 36rem; width: 100%; }
+
+.carousel-controls { position: absolute; top: 50%; left: 0; right: 0; display:flex; justify-content: space-between; transform: translateY(-50%); pointer-events: none; }
+.carousel-controls button { pointer-events: all; background: rgba(255,255,255,0.85); border: none; padding: .5rem .75rem; margin: 0 1rem; border-radius: .5rem; box-shadow: 0 6px 18px rgba(2,6,23,0.08); cursor: pointer; }
+
+.carousel-dots { text-align: center; margin-top: .75rem; }
+.carousel-dots button { width: .75rem; height: .75rem; border-radius: 9999px; border: none; margin: 0 .25rem; background: #d1d5db; cursor: pointer; }
+.carousel-dots button.active { background: var(--color-accent); }
+
+/* Pause on hover */
+.carousel:hover .carousel-track { transition-duration: .3s; }
