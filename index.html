@@ -1,163 +1,272 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boceto Wireframe de Portafolio</title>
-    <!-- Carga de Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Portfolio Profesional - Alejandro Torres Muñoz</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <!-- Enlace al archivo CSS externo -->
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="text-gray-800">
+
+<body>
 
     <!-- 1. ENCABEZADO (HEADER) -->
-    <header class="header-box sticky top-0 z-10 shadow-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
-            
-            <!-- Logo/Icono y Nombre -->
-            <div class="flex items-center space-x-3">
-                <!-- SVG logo simple -->
-                <div class="logo-placeholder" aria-hidden="true">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <rect x="3" y="3" width="18" height="18" rx="4" fill="#374151"></rect>
-                        <path d="M7 17L10 7L14 17" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <h1 class="text-xl font-extrabold tracking-widest text-gray-700">
-                    Alejandro Torres Muñoz
-                </h1>
-            </div>
+    <header class="header-box sticky-top shadow">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <!-- Logo/Icono y Nombre -->
+                <a class="navbar-brand d-flex align-items-center" href="#home">
+                    <div class="logo-placeholder me-2">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="3" width="18" height="18" rx="4" fill="#374151"></rect>
+                            <path d="M7 17L10 7L14 17" stroke="#fff" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <span class="fw-bold">Alejandro Torres Muñoz</span>
+                </a>
 
-            <!-- Navegación -->
-            <nav class="space-x-4">
-                <a href="#about" class="text-gray-600 hover:text-gray-900 font-medium p-2 border-b-2 border-transparent hover:border-gray-500 transition duration-150">Sobre mí</a>
-                <a href="#projects" class="text-gray-600 hover:text-gray-900 font-medium p-2 border-b-2 border-transparent hover:border-gray-500 transition duration-150">Proyectos</a>
-                <a href="#contact" class="text-gray-600 hover:text-gray-900 font-medium p-2 border-b-2 border-transparent hover:border-gray-500 transition duration-150">Contacto</a>
-            </nav>
-        </div>
+                <!-- Toggle para móvil -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navegación -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">Sobre mí</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#projects">Proyectos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
     <!-- FIN ENCABEZADO -->
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <main class="container my-5">
 
         <!-- 2. SECCIÓN "SOBRE MÍ" -->
-    <section id="about" class="wireframe-box bg-white shadow-xl hero">
-            <h2 class="text-3xl font-bold mb-6 text-center text-gray-700">Sobre mí</h2>
+        <section id="about" class="wireframe-box hero mb-5">
+            <h2 class="text-center mb-4 section-title">Sobre mí</h2>
 
-            <div class="flex flex-col md:flex-row items-center md:space-x-8">
+            <div class="row align-items-center">
                 <!-- Foto placeholder -->
-                <div class="profile-photo-placeholder flex-shrink-0 mb-6 md:mb-0" role="img" aria-label="Foto de perfil">
-                    <span class="sr-only">Foto de perfil</span>
+                <div class="col-md-4 text-center mb-4 mb-md-0">
+                    <div class="profile-photo-placeholder mx-auto" role="img" aria-label="Foto de perfil">
+                        <span class="visually-hidden">Foto de perfil</span>
+                    </div>
                 </div>
 
-                <!-- Bio / Descripción -->
-                <div class="flex-grow">
-                    <p class="text-lg text-gray-700 mb-3">Soy desarrollador web y poseo un Grado Superior en Desarrollo de Aplicaciones Web.</p>
-                    <p class="text-sm text-gray-500 mt-4">Habilidades: JavaScript, HTML, CSS, SpringBoot, Java, PostgreSQL.</p>
-                    <div class="mt-6">
-                        <a href="#projects" class="btn-primary">Ver proyectos destacados</a>
-                        <a href="#contact" class="btn-outline ml-3">Contactar</a>
+                <!-- Bio / Descripción con contentEditable -->
+                <div class="col-md-8">
+                    <p class="lead" contenteditable="true" data-bs-toggle="tooltip" data-bs-placement="top"
+                        title="Haz clic para editar esta descripción">
+                        Soy desarrollador web y poseo un Grado Superior en Desarrollo de Aplicaciones Web.
+                    </p>
+                    <p class="text-muted mt-3">
+                        <strong>Habilidades:</strong> JavaScript, HTML, CSS, SpringBoot, Java, PostgreSQL.
+                    </p>
+                    <div class="mt-4">
+                        <a href="#projects" class="btn btn-primary me-2">
+                            <i class="bi bi-briefcase"></i> Ver proyectos destacados
+                        </a>
+                        <a href="#contact" class="btn btn-outline-secondary">
+                            <i class="bi bi-envelope"></i> Contactar
+                        </a>
                     </div>
                 </div>
             </div>
 
+            <!-- Información adicional colapsable -->
+            <div class="mt-4">
+                <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#moreInfo"
+                    aria-expanded="false" aria-controls="moreInfo">
+                    <i class="bi bi-chevron-down"></i> Ver más información
+                </button>
+                <div class="collapse" id="moreInfo">
+                    <div class="card card-body mt-2">
+                        <h5>Experiencia y Formación</h5>
+                        <p>Graduado en Desarrollo de Aplicaciones Web con experiencia en proyectos full-stack.
+                            Apasionado por crear soluciones web innovadoras y accesibles.</p>
+                    </div>
+                </div>
+            </div>
         </section>
         <!-- FIN SECCIÓN "SOBRE MÍ" -->
-    <!-- Separador elegante -->
-    <div class="section-separator" aria-hidden="true"></div>
 
-    <!-- 3. TABLA / SECCIÓN DE PROYECTOS (Usamos un Grid de Tarjetas) -->
-        <section id="projects" class="wireframe-box bg-white shadow-xl">
-            <h2 class="text-3xl font-bold mb-6 text-center text-gray-700">Proyectos</h2>
+        <hr class="section-separator">
 
-            <!-- Carrusel de proyectos (muestra uno a la vez) -->
-            <div class="carousel" id="projectsCarousel" aria-roledescription="carousel">
-                <div class="carousel-track">
+        <!-- VIDEO PRESENTACIÓN -->
+        <section id="video" class="wireframe-box mb-5">
+            <h2 class="text-center mb-4 section-title">Video Presentación</h2>
 
-                    <div class="carousel-slide">
-                        <article class="project-card" aria-labelledby="proj1-title">
-                            <div class="project-image-placeholder" role="img" aria-label="Captura Portfolio Personal">Imagen</div>
-                            <h3 id="proj1-title" class="text-xl font-semibold mt-3 mb-2">Portfolio Personal</h3>
-                            <p class="text-gray-600">Sitio personal con una selección de proyectos, blog y CV interactivo. Diseño responsivo y despliegue continuo.</p>
-                            <div class="mt-4 flex space-x-3">
-                                <a href="https://example.com/portfolio" target="_blank" rel="noopener" class="btn-primary">Ver demo</a>
-                                <a href="https://github.com/usuario/portfolio" target="_blank" rel="noopener" class="btn-outline">Código</a>
-                            </div>
-                        </article>
+            <div class="row">
+                <div class="col-12">
+                    <div class="video-container text-center">
+                        <video id="presentationVideo" width="100%" height="auto" controls
+                            poster="imagenes/video-poster.jpg" preload="metadata" class="rounded shadow">
+                            <source src="video/presentacion.mp4" type="video/mp4">
+                            <source src="video/presentacion.webm" type="video/webm">
+                            <source src="video/presentacion.ogg" type="video/ogg">
+                            Tu navegador no soporta el elemento de video.
+                        </video>
+                        <button class="btn btn-success mt-3" id="playVideoBtn" data-bs-toggle="tooltip"
+                            title="Reproducir video presentación">
+                            <i class="bi bi-play-circle"></i> Reproducir Presentación
+                        </button>
                     </div>
-
-                    <div class="carousel-slide">
-                        <article class="project-card" aria-labelledby="proj2-title">
-                            <div class="project-image-placeholder" role="img" aria-label="Captura App de Tareas">Imagen</div>
-                            <h3 id="proj2-title" class="text-xl font-semibold mt-3 mb-2">App de Tareas</h3>
-                            <p class="text-gray-600">Aplicación CRUD para gestión de tareas con autenticación, filtro por estado y API REST con Node.js.</p>
-                            <div class="mt-4 flex space-x-3">
-                                <a href="https://example.com/tasks" target="_blank" rel="noopener" class="btn-primary">Ver demo</a>
-                                <a href="https://github.com/usuario/tasks-app" target="_blank" rel="noopener" class="btn-outline">Código</a>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="carousel-slide">
-                        <article class="project-card" aria-labelledby="proj3-title">
-                            <div class="project-image-placeholder" role="img" aria-label="Captura Blog Estático">Imagen</div>
-                            <h3 id="proj3-title" class="text-xl font-semibold mt-3 mb-2">Blog Estático</h3>
-                            <p class="text-gray-600">Blog estático con contenido optimizado para SEO y pipeline de CI/CD para publicación automática.</p>
-                            <div class="mt-4 flex space-x-3">
-                                <a href="https://example.com/blog" target="_blank" rel="noopener" class="btn-primary">Leer artículos</a>
-                                <a href="https://github.com/usuario/static-blog" target="_blank" rel="noopener" class="btn-outline">Código</a>
-                            </div>
-                        </article>
-                    </div>
-
                 </div>
-
-                <div class="carousel-controls">
-                    <button class="carousel-prev" aria-label="Anterior">◀</button>
-                    <button class="carousel-next" aria-label="Siguiente">▶</button>
-                </div>
-                <div class="carousel-dots" role="tablist" aria-label="Navegación de proyectos"></div>
             </div>
 
+            <!-- Información sobre el video (Collapse) -->
+            <div class="mt-4">
+                <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#videoInfo"
+                    aria-expanded="false" aria-controls="videoInfo">
+                    <i class="bi bi-info-circle"></i> Información sobre el video
+                </button>
+                <div class="collapse" id="videoInfo">
+                    <div class="card card-body mt-2">
+                        <h5>📹 Sobre el Video</h5>
+                        <p>Este video de presentación te ofrece una visión general de mi trayectoria profesional y los
+                            proyectos en los que he trabajado.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- FIN VIDEO PRESENTACIÓN -->
+
+        <hr class="section-separator">
+
+        <!-- 3. TABLA DE PROYECTOS -->
+        <section id="projects" class="wireframe-box mb-5">
+            <h2 class="text-center mb-4 section-title">Proyectos</h2>
+
+            <!-- Tabla de Proyectos -->
+            <div class="table-responsive">
+                <table class="table table-hover table-striped align-middle">
+                    <colgroup>
+                        <col style="width: 25%;">
+                        <col style="width: 55%;">
+                        <col style="width: 20%;">
+                    </colgroup>
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">Nombre del Proyecto</th>
+                            <th scope="col">Descripción</th>
+                            <th scope="col">Enlaces</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Portfolio Personal</td>
+                            <td>Sitio personal con una selección de proyectos, blog y CV interactivo. Diseño responsivo
+                                y despliegue continuo.</td>
+                            <td>
+                                <a href="https://example.com/portfolio" target="_blank" rel="noopener"
+                                    class="btn btn-sm btn-primary" data-bs-toggle="tooltip" title="Ver demostración">
+                                    <i class="bi bi-box-arrow-up-right"></i> Demo
+                                </a>
+                                <a href="https://github.com/Atm0027/Portfolio-Personal" target="_blank" rel="noopener"
+                                    class="btn btn-sm btn-outline-secondary" data-bs-toggle="tooltip"
+                                    title="Ver código fuente">
+                                    <i class="bi bi-github"></i> Código
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>App de Tareas</td>
+                            <td>Aplicación CRUD para gestión de tareas con autenticación, filtro por estado y API REST
+                                con Node.js.</td>
+                            <td>
+                                <a href="https://example.com/tasks" target="_blank" rel="noopener"
+                                    class="btn btn-sm btn-primary" data-bs-toggle="tooltip" title="Ver demostración">
+                                    <i class="bi bi-box-arrow-up-right"></i> Demo
+                                </a>
+                                <a href="https://github.com/Atm0027/Torres_Munoz_Alejandro_TaskFlow" target="_blank"
+                                    rel="noopener" class="btn btn-sm btn-outline-secondary" data-bs-toggle="tooltip"
+                                    title="Ver código fuente">
+                                    <i class="bi bi-github"></i> Código
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Blog Estático</td>
+                            <td>Blog estático con contenido optimizado para SEO y pipeline de CI/CD para publicación
+                                automática.</td>
+                            <td>
+                                <a href="https://example.com/blog" target="_blank" rel="noopener"
+                                    class="btn btn-sm btn-primary" data-bs-toggle="tooltip" title="Ver artículos">
+                                    <i class="bi bi-box-arrow-up-right"></i> Demo
+                                </a>
+                                <a href="https://github.com/usuario/static-blog" target="_blank" rel="noopener"
+                                    class="btn btn-sm btn-outline-secondary" data-bs-toggle="tooltip"
+                                    title="Ver código fuente">
+                                    <i class="bi bi-github"></i> Código
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
         <!-- FIN SECCIÓN DE PROYECTOS -->
-    <!-- Separador elegante -->
-    <div class="section-separator" aria-hidden="true"></div>
 
-    <!-- 4. FORMULARIO DE CONTACTO -->
-        <section id="contact" class="wireframe-box bg-white shadow-xl max-w-2xl mx-auto">
-            <h2 class="text-3xl font-bold mb-8 text-center text-gray-700">Contáctame</h2>
-            <form class="space-y-6 contact-form" method="post" action="#">
-                
-                <!-- Campo Nombre -->
-                <div>
-                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
-                    <input type="text" id="name" name="name" required class="w-full px-4 py-2 border-2 border-gray-300 rounded-md focus:outline-none focus:border-gray-500 transition duration-150" placeholder="Tu nombre">
+        <hr class="section-separator">
+
+        <!-- 4. FORMULARIO DE CONTACTO -->
+        <section id="contact" class="wireframe-box mb-5">
+            <h2 class="text-center mb-4 section-title">Contáctame</h2>
+
+            <!-- Formulario de Contacto -->
+            <form class="contact-form" method="post" action="#" id="contactForm">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nombre</label>
+                    <input type="text" id="name" name="name" required class="form-control" placeholder="Tu nombre"
+                        data-bs-toggle="tooltip" title="Ingresa tu nombre completo">
                 </div>
 
-                <!-- Campo Email -->
-                <div>
-                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Correo Electrónico</label>
-                    <input type="email" id="email" name="email" required class="w-full px-4 py-2 border-2 border-gray-300 rounded-md focus:outline-none focus:border-gray-500 transition duration-150" placeholder="tu.email@ejemplo.com">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Correo Electrónico</label>
+                    <input type="email" id="email" name="email" required class="form-control"
+                        placeholder="tu.email@ejemplo.com" data-bs-toggle="tooltip"
+                        title="Ingresa tu correo electrónico">
                 </div>
 
-                <!-- Campo Mensaje -->
-                <div>
-                    <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Mensaje</label>
-                    <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border-2 border-gray-300 rounded-md focus:outline-none focus:border-gray-500 transition duration-150" placeholder="Tu mensaje..."></textarea>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Mensaje</label>
+                    <textarea id="message" name="message" rows="5" class="form-control" placeholder="Tu mensaje..."
+                        data-bs-toggle="tooltip" title="Escribe tu mensaje aquí"></textarea>
                 </div>
 
-                <!-- Checkbox aceptar condiciones -->
-                <div class="flex items-center">
-                    <input id="terms" name="terms" type="checkbox" required class="h-4 w-4 text-blue-600 border-gray-300 rounded">
-                    <label for="terms" class="ml-2 block text-sm text-gray-700">Acepto los <a href="#" class="text-blue-600 hover:underline">términos y condiciones</a>.</label>
+                <div class="mb-3 form-check">
+                    <input id="terms" name="terms" type="checkbox" required class="form-check-input">
+                    <label for="terms" class="form-check-label">
+                        Acepto los <a href="#" data-bs-toggle="popover" data-bs-trigger="hover"
+                            data-bs-content="Al enviar este formulario, aceptas que tus datos sean procesados de acuerdo con nuestra política de privacidad.">términos
+                            y condiciones</a>.
+                    </label>
                 </div>
 
-                <!-- Botón de Envío -->
-                <div class="pt-2">
-                    <button type="submit" class="w-full bg-gray-700 text-white py-3 rounded-md font-semibold text-lg hover:bg-gray-800 transition duration-300 border-b-4 border-gray-900">
-                        Enviar Mensaje
+                <!-- Elemento hidden que se muestra al enviar -->
+                <div id="successMessage" class="alert alert-success" hidden role="alert">
+                    <i class="bi bi-check-circle"></i> ¡Mensaje enviado con éxito! Te contactaré pronto.
+                </div>
+
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary btn-lg">
+                        <i class="bi bi-send"></i> Enviar Mensaje
                     </button>
                 </div>
             </form>
@@ -167,81 +276,93 @@
     </main>
 
     <!-- 5. PIE DE PÁGINA (FOOTER) -->
-    <footer class="header-box mt-10 text-center py-6 border-t-4 border-gray-400 bg-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p class="text-sm text-gray-700">
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-2">
                 &copy; <span id="currentYear"></span> Alejandro Torres Muñoz. Todos los derechos reservados.
             </p>
-            <div class="mt-2 space-x-4 text-gray-600 text-lg">
-                <a href="#" class="hover:text-gray-900 transition">LinkedIn</a>
-                <span class="text-gray-400">|</span>
-                <a href="#" class="hover:text-gray-900 transition">GitHub</a>
-                <span class="text-gray-400">|</span>
-                <a href="#" class="hover:text-gray-900 transition">Teléfono</a>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/tu-perfil" target="_blank" class="text-white me-3"
+                    data-bs-toggle="tooltip" title="LinkedIn">
+                    <i class="bi bi-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://github.com/Atm0027" target="_blank" class="text-white me-3" data-bs-toggle="tooltip"
+                    title="GitHub">
+                    <i class="bi bi-github"></i> GitHub
+                </a>
+                <a href="tel:+34123456789" class="text-white" data-bs-toggle="tooltip" title="Teléfono">
+                    <i class="bi bi-telephone"></i> Teléfono
+                </a>
             </div>
         </div>
     </footer>
     <!-- FIN PIE DE PÁGINA -->
 
+    <!-- Bootstrap JS Bundle (incluye Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
     <script>
-        // JS para actualizar dinámicamente el año en el pie de página
+        // Actualizar año en el pie de página
         document.getElementById('currentYear').textContent = new Date().getFullYear();
-    </script>
-    <script>
-        // Carrusel de proyectos: rotación automática + controles
-        (function(){
-            const carousel = document.getElementById('projectsCarousel');
-            if(!carousel) return;
-            const track = carousel.querySelector('.carousel-track');
-            const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
-            const prevBtn = carousel.querySelector('.carousel-prev');
-            const nextBtn = carousel.querySelector('.carousel-next');
-            const dotsContainer = carousel.querySelector('.carousel-dots');
-            let current = 0;
-            let interval = null;
-            const ROTATE_MS = 5000;
 
-            // crear dots
-            slides.forEach((s, i) => {
-                const btn = document.createElement('button');
-                btn.setAttribute('aria-label', 'Ir al proyecto ' + (i+1));
-                btn.addEventListener('click', () => { goTo(i); restart(); });
-                if(i===0) btn.classList.add('active');
-                dotsContainer.appendChild(btn);
+        // Inicializar tooltips de Bootstrap
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+
+        // Inicializar popovers de Bootstrap
+        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+        const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl));
+
+        // Video Presentación
+        const video = document.getElementById('presentationVideo');
+        const playVideoBtn = document.getElementById('playVideoBtn');
+
+        playVideoBtn.addEventListener('click', () => {
+            video.play();
+            playVideoBtn.style.display = 'none';
+        });
+
+        // Mostrar botón de reproducción cuando el video termina
+        video.addEventListener('ended', () => {
+            playVideoBtn.style.display = 'block';
+        });
+
+        // Formulario de contacto
+        const contactForm = document.getElementById('contactForm');
+        const successMessage = document.getElementById('successMessage');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Mostrar mensaje de éxito (elemento hidden)
+            successMessage.removeAttribute('hidden');
+
+            // Animar el mensaje
+            successMessage.classList.add('animate__animated', 'animate__fadeIn');
+
+            // Resetear formulario
+            contactForm.reset();
+
+            // Ocultar mensaje después de 5 segundos
+            setTimeout(() => {
+                successMessage.setAttribute('hidden', '');
+            }, 5000);
+        });
+
+        // Smooth scroll para navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
-
-            function update() {
-                const w = carousel.clientWidth;
-                track.style.transform = `translateX(-${current * w}px)`;
-                // actualizar dots
-                Array.from(dotsContainer.children).forEach((d, i) => d.classList.toggle('active', i===current));
-            }
-
-            function goTo(index){
-                current = (index + slides.length) % slides.length;
-                update();
-            }
-
-            function next(){ goTo(current+1); }
-            function prev(){ goTo(current-1); }
-
-            function start(){ interval = setInterval(next, ROTATE_MS); }
-            function stop(){ clearInterval(interval); interval = null; }
-            function restart(){ stop(); start(); }
-
-            nextBtn.addEventListener('click', () => { next(); restart(); });
-            prevBtn.addEventListener('click', () => { prev(); restart(); });
-
-            // pausar al hover
-            carousel.addEventListener('mouseenter', stop);
-            carousel.addEventListener('mouseleave', start);
-
-            // actualizar en resize para mantener el cálculo correcto
-            window.addEventListener('resize', update);
-
-            // iniciar
-            update(); start();
-        })();
+        });
     </script>
 </body>
+
 </html>
