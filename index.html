@@ -9,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
     <!-- Enlace al archivo CSS externo -->
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -16,18 +17,17 @@
 <body>
 
     <!-- 1. ENCABEZADO (HEADER) -->
-    <header class="header-box sticky-top shadow">
+    <header class="sticky-top shadow">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <!-- Logo/Icono y Nombre -->
                 <a class="navbar-brand d-flex align-items-center" href="#home">
-                    <div class="logo-placeholder me-2">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="3" y="3" width="18" height="18" rx="4" fill="#374151"></rect>
-                            <path d="M7 17L10 7L14 17" stroke="#fff" stroke-width="1.5" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
-                    </div>
+                    <svg class="me-2" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <rect x="3" y="3" width="18" height="18" rx="4" fill="#374151"></rect>
+                        <path d="M7 17L10 7L14 17" stroke="#fff" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
                     <span class="fw-bold">Alejandro Torres Muñoz</span>
                 </a>
 
@@ -58,7 +58,7 @@
     <main class="container my-5">
 
         <!-- 2. SECCIÓN "SOBRE MÍ" -->
-        <section id="about" class="wireframe-box hero mb-5">
+        <section id="about" class="wireframe-box hero">
             <h2 class="text-center mb-4 section-title">Sobre mí</h2>
 
             <div class="row align-items-center">
@@ -69,10 +69,9 @@
                     </div>
                 </div>
 
-                <!-- Bio / Descripción con contentEditable -->
+                <!-- Bio / Descripción -->
                 <div class="col-md-8">
-                    <p class="lead" contenteditable="true" data-bs-toggle="tooltip" data-bs-placement="top"
-                        title="Haz clic para editar esta descripción">
+                    <p class="lead">
                         Soy desarrollador web y poseo un Grado Superior en Desarrollo de Aplicaciones Web.
                     </p>
                     <p class="text-muted mt-3">
@@ -109,25 +108,21 @@
         <hr class="section-separator">
 
         <!-- VIDEO PRESENTACIÓN -->
-        <section id="video" class="wireframe-box mb-5">
+        <section id="video" class="wireframe-box">
             <h2 class="text-center mb-4 section-title">Video Presentación</h2>
 
-            <div class="row">
-                <div class="col-12">
-                    <div class="video-container text-center">
-                        <video id="presentationVideo" width="100%" height="auto" controls
-                            poster="imagenes/video-poster.jpg" preload="metadata" class="rounded shadow">
-                            <source src="video/presentacion.mp4" type="video/mp4">
-                            <source src="video/presentacion.webm" type="video/webm">
-                            <source src="video/presentacion.ogg" type="video/ogg">
-                            Tu navegador no soporta el elemento de video.
-                        </video>
-                        <button class="btn btn-success mt-3" id="playVideoBtn" data-bs-toggle="tooltip"
-                            title="Reproducir video presentación">
-                            <i class="bi bi-play-circle"></i> Reproducir Presentación
-                        </button>
-                    </div>
-                </div>
+            <div class="text-center">
+                <video id="presentationVideo" class="rounded shadow" width="100%" height="auto" controls
+                    poster="imagenes/video-poster.jpg" preload="metadata">
+                    <source src="video/presentacion.mp4" type="video/mp4">
+                    <source src="video/presentacion.webm" type="video/webm">
+                    <source src="video/presentacion.ogg" type="video/ogg">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+                <button class="btn btn-success mt-3" id="playVideoBtn" data-bs-toggle="tooltip"
+                    title="Reproducir video presentación">
+                    <i class="bi bi-play-circle"></i> Reproducir Presentación
+                </button>
             </div>
 
             <!-- Información sobre el video (Collapse) -->
@@ -150,7 +145,7 @@
         <hr class="section-separator">
 
         <!-- 3. TABLA DE PROYECTOS -->
-        <section id="projects" class="wireframe-box mb-5">
+        <section id="projects" class="wireframe-box">
             <h2 class="text-center mb-4 section-title">Proyectos</h2>
 
             <!-- Tabla de Proyectos -->
@@ -165,7 +160,7 @@
                         <tr>
                             <th scope="col">Nombre del Proyecto</th>
                             <th scope="col">Descripción</th>
-                            <th scope="col">Enlaces</th>
+                            <th scope="col">Enlace</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -226,7 +221,7 @@
         <hr class="section-separator">
 
         <!-- 4. FORMULARIO DE CONTACTO -->
-        <section id="contact" class="wireframe-box mb-5">
+        <section id="contact" class="wireframe-box">
             <h2 class="text-center mb-4 section-title">Contáctame</h2>
 
             <!-- Formulario de Contacto -->
