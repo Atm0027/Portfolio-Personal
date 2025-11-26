@@ -3,14 +3,6 @@
 .DS_Store?
 ._*
 .Spotlight-V100
-
-# Archivos multimedia grandes (mantener solo en local)
-video/*.mp4
-video/*.webm
-video/*.ogg
-imagenes/*.jpg
-imagenes/*.png
-!imagenes/README.md
 .Trashes
 
 # Thumbnails
