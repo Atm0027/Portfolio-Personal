@@ -1,0 +1,88 @@
+/* Project Card Component Styles */
+
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e6eef7;
+    border-radius: 1rem;
+    overflow: hidden;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.card-title {
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 0.75rem;
+}
+
+.card-title i {
+    color: #2563eb;
+}
+
+.card-text {
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.technologies .badge {
+    font-weight: 500;
+    font-size: 0.75rem;
+    padding: 0.4em 0.8em;
+    border-radius: 20px;
+}
+
+.technologies .badge.bg-primary {
+    background: linear-gradient(135deg, #2563eb, #7c3aed) !important;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    border: none;
+    font-weight: 500;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #7c3aed, #2563eb);
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+.btn-outline-secondary:hover {
+    background-color: #475569;
+    border-color: #475569;
+}
+
+.btn-outline-primary:hover {
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    border-color: transparent;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Dark theme */
+:host-context(.dark-theme) .project-card {
+    background-color: #1f2937;
+    border-color: #374151;
+}
+
+:host-context(.dark-theme) .card-title {
+    color: #f3f4f6;
+}
+
+:host-context(.dark-theme) .card-text {
+    color: #9ca3af;
+}
