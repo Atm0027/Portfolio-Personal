@@ -1,0 +1,42 @@
+/* Footer Component Styles */
+
+footer {
+    background: linear-gradient(135deg, #1f2937, #111827);
+    animation: fadeIn 1.5s ease-out;
+}
+
+footer a {
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #2563eb !important;
+    transform: translateY(-3px);
+}
+
+.social-links a {
+    display: inline-block;
+    margin: 0 0.5rem;
+}
+
+.social-links a i {
+    margin-right: 0.25rem;
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover i {
+    transform: scale(1.2);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

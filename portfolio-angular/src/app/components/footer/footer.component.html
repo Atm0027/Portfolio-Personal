@@ -1,0 +1,15 @@
+<footer class="bg-dark text-white text-center py-4 mt-5">
+    <div class="container">
+        <p class="mb-2">
+            &copy; {{ currentYear | date:'yyyy' }} Alejandro Torres Muñoz. Todos los derechos reservados.
+        </p>
+        <div class="social-links">
+            @for (link of socialLinks; track link.name) {
+            <a [href]="link.url" target="_blank" rel="noopener noreferrer" class="text-white me-3" [title]="link.name">
+                <i class="bi" [class]="link.icon"></i>
+                {{ link.name }}
+            </a>
+            }
+        </div>
+    </div>
+</footer>
