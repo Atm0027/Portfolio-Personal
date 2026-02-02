@@ -1,0 +1,157 @@
+/* ======================================================
+   styles.css — Portfolio Profesional con Angular
+   Estilos globales de la aplicación
+   ====================================================== */
+
+/* Importar fuente Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* ------------------
+   Variables globales
+   ------------------ */
+:root {
+    --color-bg: #f8fafc;
+    --color-surface: #ffffff;
+    --color-primary: #0f172a;
+    --color-secondary: #475569;
+    --accent-start: #2563eb;
+    --accent-end: #7c3aed;
+    --color-muted: #94a3b8;
+    --color-border: #e6eef7;
+    --font-sans: 'Poppins', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Variables para tema oscuro */
+.dark-theme {
+    --color-bg: #111827;
+    --color-surface: #1f2937;
+    --color-primary: #f3f4f6;
+    --color-secondary: #d1d5db;
+    --color-muted: #9ca3af;
+    --color-border: #374151;
+}
+
+/* ======================================================
+   Reset / Base
+   ====================================================== */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--color-bg);
+    color: var(--color-primary);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ======================================================
+   Layout Principal
+   ====================================================== */
+.main-content {
+    min-height: calc(100vh - 200px);
+}
+
+/* ======================================================
+   Transiciones globales
+   ====================================================== */
+a,
+button,
+.btn {
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+a:hover {
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ======================================================
+   Botones personalizados globales
+   ====================================================== */
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-start), var(--accent-end));
+    border: none;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--accent-end), var(--accent-start));
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+}
+
+.btn-outline-secondary {
+    border: 2px solid var(--color-secondary);
+    color: var(--color-secondary);
+    font-weight: 600;
+}
+
+.btn-outline-secondary:hover {
+    background: var(--color-secondary);
+    color: white;
+}
+
+/* ======================================================
+   Tema oscuro - Estilos globales
+   ====================================================== */
+.dark-theme .navbar-light {
+    background-color: #1f2937 !important;
+}
+
+.dark-theme .navbar-light .navbar-brand {
+    color: #f3f4f6;
+}
+
+.dark-theme .navbar-light .nav-link {
+    color: #d1d5db;
+}
+
+.dark-theme .navbar-light .nav-link:hover {
+    color: #60a5fa;
+}
+
+/* ======================================================
+   Accesibilidad
+   ====================================================== */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+    outline: 3px solid var(--accent-start);
+    outline-offset: 2px;
+}
+
+/* Fin de styles.css */
