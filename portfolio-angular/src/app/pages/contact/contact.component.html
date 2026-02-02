@@ -1,0 +1,88 @@
+<div class="container my-5">
+    <section class="wireframe-box">
+        <h2 class="text-center mb-4 section-title">Contáctame</h2>
+
+        <!-- Formulario de Contacto -->
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+
+            <!-- Campo Nombre -->
+            <div class="mb-3">
+                <label for="name" class="form-label">Nombre</label>
+                <input type="text" id="name" formControlName="name" class="form-control"
+                    [class.is-invalid]="isFieldInvalid('name')" placeholder="Tu nombre">
+                @if (hasError('name', 'required')) {
+                <div class="invalid-feedback">El nombre es obligatorio.</div>
+                }
+                @if (hasError('name', 'minlength')) {
+                <div class="invalid-feedback">El nombre debe tener al menos 2 caracteres.</div>
+                }
+            </div>
+
+            <!-- Campo Email -->
+            <div class="mb-3">
+                <label for="email" class="form-label">Correo Electrónico</label>
+                <input type="email" id="email" formControlName="email" class="form-control"
+                    [class.is-invalid]="isFieldInvalid('email')" placeholder="tu.email@ejemplo.com">
+                @if (hasError('email', 'required')) {
+                <div class="invalid-feedback">El correo electrónico es obligatorio.</div>
+                }
+                @if (hasError('email', 'email')) {
+                <div class="invalid-feedback">Por favor, ingresa un correo electrónico válido.</div>
+                }
+            </div>
+
+            <!-- Campo Mensaje -->
+            <div class="mb-3">
+                <label for="message" class="form-label">Mensaje</label>
+                <textarea id="message" formControlName="message" rows="5" class="form-control"
+                    [class.is-invalid]="isFieldInvalid('message')" placeholder="Tu mensaje..."></textarea>
+                @if (hasError('message', 'required')) {
+                <div class="invalid-feedback">El mensaje es obligatorio.</div>
+                }
+                @if (hasError('message', 'minlength')) {
+                <div class="invalid-feedback">El mensaje debe tener al menos 10 caracteres.</div>
+                }
+            </div>
+
+            <!-- Checkbox términos -->
+            <div class="mb-3 form-check">
+                <input id="terms" type="checkbox" formControlName="termsAccepted" class="form-check-input"
+                    [class.is-invalid]="isFieldInvalid('termsAccepted')">
+                <label for="terms" class="form-check-label">
+                    Acepto los <a href="#" class="terms-link">términos y condiciones</a>.
+                </label>
+                @if (hasError('termsAccepted', 'required')) {
+                <div class="invalid-feedback">Debes aceptar los términos y condiciones.</div>
+                }
+            </div>
+
+            <!-- Mensaje de éxito -->
+            @if (formStatus === FormStatus.SUCCESS) {
+            <div class="alert alert-success fade-in" role="alert">
+                <i class="bi bi-check-circle me-2"></i>
+                ¡Mensaje enviado con éxito! Te contactaré pronto.
+            </div>
+            }
+
+            <!-- Mensaje de error -->
+            @if (formStatus === FormStatus.ERROR) {
+            <div class="alert alert-danger fade-in" role="alert">
+                <i class="bi bi-exclamation-triangle me-2"></i>
+                Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.
+            </div>
+            }
+
+            <!-- Botón de envío -->
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary btn-lg" [disabled]="formStatus === FormStatus.SUBMITTING">
+                    @if (formStatus === FormStatus.SUBMITTING) {
+                    <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                    Enviando...
+                    } @else {
+                    <i class="bi bi-send me-1"></i> Enviar Mensaje
+                    }
+                </button>
+            </div>
+        </form>
+    </section>
+</div>
