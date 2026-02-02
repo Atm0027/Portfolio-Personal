@@ -1,0 +1,208 @@
+/* Home Component Styles */
+
+.wireframe-box {
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    margin-bottom: 2rem;
+    border: 1px solid #e6eef7;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.hero {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(124, 58, 237, 0.05));
+    border-left: 4px solid #2563eb;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #2563eb, #7c3aed);
+    border-radius: 2px;
+}
+
+.profile-photo-placeholder {
+    width: 180px;
+    height: 180px;
+    background: linear-gradient(135deg, #d1d5db, #9ca3af);
+    border-radius: 50%;
+    border: 5px solid #2563eb;
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    animation: pulse 2s infinite;
+}
+
+.profile-photo-placeholder:hover {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 15px 40px rgba(37, 99, 235, 0.3);
+}
+
+.profile-icon {
+    font-size: 5rem;
+    color: #ffffff;
+}
+
+.skill-badge {
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    font-weight: 500;
+    padding: 0.4em 0.8em;
+    border-radius: 20px;
+}
+
+.section-separator {
+    border: 0;
+    height: 2px;
+    background: linear-gradient(90deg,
+            rgba(37, 99, 235, 0),
+            #2563eb 25%,
+            #7c3aed 75%,
+            rgba(124, 58, 237, 0));
+    margin: 3rem 0;
+    opacity: 0.6;
+}
+
+.video-player {
+    max-width: 800px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-player:hover {
+    transform: scale(1.02);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    border: none;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #7c3aed, #2563eb);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn-link {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.btn-link:hover {
+    color: #7c3aed;
+}
+
+.fade-in {
+    animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Dark theme */
+:host-context(.dark-theme) .wireframe-box {
+    background: #1f2937;
+    border-color: #374151;
+}
+
+:host-context(.dark-theme) .hero {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(124, 58, 237, 0.1));
+}
+
+:host-context(.dark-theme) .section-title {
+    color: #f3f4f6;
+}
+
+:host-context(.dark-theme) .lead,
+:host-context(.dark-theme) p,
+:host-context(.dark-theme) strong {
+    color: #d1d5db;
+}
+
+:host-context(.dark-theme) .card {
+    background-color: #374151;
+    border-color: #4b5563;
+    color: #d1d5db;
+}
+
+@media (max-width: 768px) {
+    .wireframe-box {
+        padding: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .profile-photo-placeholder {
+        width: 150px;
+        height: 150px;
+    }
+
+    .profile-icon {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .profile-photo-placeholder {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-icon {
+        font-size: 3rem;
+    }
+
+    .wireframe-box {
+        padding: 1rem;
+    }
+}
