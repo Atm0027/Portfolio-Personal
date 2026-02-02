@@ -1,0 +1,143 @@
+/* Portfolio Component Styles */
+
+.wireframe-box {
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    margin-bottom: 2rem;
+    border: 1px solid #e6eef7;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #2563eb, #7c3aed);
+    border-radius: 2px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    border: none;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #7c3aed, #2563eb);
+}
+
+.technologies .badge {
+    background: linear-gradient(135deg, #2563eb, #7c3aed) !important;
+    font-weight: 500;
+    padding: 0.5em 1em;
+    border-radius: 20px;
+}
+
+/* Modal styles */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+}
+
+.modal {
+    z-index: 1050;
+}
+
+.modal-content {
+    animation: scaleUp 0.3s ease-out;
+}
+
+.modal-header {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(124, 58, 237, 0.05));
+    border-bottom: 1px solid #e6eef7;
+}
+
+.modal-title {
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.modal-title i {
+    color: #2563eb;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Dark theme */
+:host-context(.dark-theme) .wireframe-box {
+    background: #1f2937;
+    border-color: #374151;
+}
+
+:host-context(.dark-theme) .section-title {
+    color: #f3f4f6;
+}
+
+:host-context(.dark-theme) .modal-content {
+    background-color: #1f2937;
+    color: #f3f4f6;
+}
+
+:host-context(.dark-theme) .modal-header {
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(124, 58, 237, 0.1));
+    border-color: #374151;
+}
+
+:host-context(.dark-theme) .modal-footer {
+    border-color: #374151;
+}
+
+:host-context(.dark-theme) .btn-close {
+    filter: invert(1);
+}
+
+@media (max-width: 768px) {
+    .wireframe-box {
+        padding: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}
