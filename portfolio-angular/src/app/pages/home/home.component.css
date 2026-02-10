@@ -36,28 +36,21 @@
     border-radius: 2px;
 }
 
-.profile-photo-placeholder {
+.profile-photo {
     width: 180px;
     height: 180px;
-    background: linear-gradient(135deg, #d1d5db, #9ca3af);
     border-radius: 50%;
     border: 5px solid #2563eb;
     box-shadow: 0 10px 30px rgba(37, 99, 235, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
-    animation: pulse 2s infinite;
 }
 
-.profile-photo-placeholder:hover {
+.profile-photo:hover {
     transform: scale(1.1) rotate(5deg);
     box-shadow: 0 15px 40px rgba(37, 99, 235, 0.3);
-}
-
-.profile-icon {
-    font-size: 5rem;
-    color: #ffffff;
 }
 
 .skill-badge {
@@ -131,17 +124,7 @@
     }
 }
 
-@keyframes pulse {
 
-    0%,
-    100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.05);
-    }
-}
 
 /* Dark theme */
 :host-context(.dark-theme) .wireframe-box {
@@ -178,13 +161,9 @@
         font-size: 2rem;
     }
 
-    .profile-photo-placeholder {
+    .profile-photo {
         width: 150px;
         height: 150px;
-    }
-
-    .profile-icon {
-        font-size: 4rem;
     }
 }
 
@@ -193,13 +172,9 @@
         font-size: 1.75rem;
     }
 
-    .profile-photo-placeholder {
+    .profile-photo {
         width: 120px;
         height: 120px;
-    }
-
-    .profile-icon {
-        font-size: 3rem;
     }
 
     .wireframe-box {
