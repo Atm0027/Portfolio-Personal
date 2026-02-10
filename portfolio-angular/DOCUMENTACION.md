@@ -131,7 +131,14 @@ ng serve
 
 # Compilar para producción
 ng build
+# Compilar para producción
+ng build
 ```
+
+## Configuración de Assets y Scripts
+
+- **Assets**: Las imágenes y videos se encuentran en `public/assets/` y se copian automáticamente a la carpeta de distribución.
+- **Bootstrap JS**: Se ha configurado en `angular.json` para incluir `bootstrap.bundle.min.js`, necesario para componentes interactivos como el menú hamburguesa y modales.
 
 ## Requisitos Cumplidos
 
