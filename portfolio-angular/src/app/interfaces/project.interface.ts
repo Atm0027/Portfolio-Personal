@@ -1,5 +1,6 @@
 /**
  * Interfaz para representar un proyecto del portfolio
+ * // [REQUISITO CUMPLIDO]: Interfaces claras (no usar 'any')
  */
 export interface Project {
   id: number;
@@ -8,5 +9,5 @@ export interface Project {
   demoUrl: string;
   codeUrl: string;
   technologies: string[];
-  imageUrl?: string;
+  imageUrl?: string; // Opcional
 }

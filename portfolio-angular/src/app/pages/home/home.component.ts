@@ -6,8 +6,7 @@ import { RouterLink } from '@angular/router';
  */
 @Component({
   selector: 'app-home',
-  standalone: true,
-  imports: [RouterLink],
+  standalone: false,
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -19,7 +18,7 @@ export default class HomeComponent {
   isVideoInfoExpanded = false;
 
   /** Habilidades del desarrollador */
-  skills: string[] = ['JavaScript', 'HTML', 'CSS', 'SpringBoot', 'Java', 'PostgreSQL', 'Angular', 'TypeScript'];
+  skills: string[] = ['JavaScript', 'HTML', 'CSS', 'SpringBoot', 'Java', 'PostgreSQL'];
 
   /**
    * Alterna la sección de más información

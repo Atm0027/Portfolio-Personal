@@ -8,8 +8,7 @@ import { ThemeMode } from '../../models';
  */
 @Component({
     selector: 'app-header',
-    standalone: true,
-    imports: [RouterLink, RouterLinkActive],
+    standalone: false,
     templateUrl: './header.component.html',
     styleUrl: './header.component.css'
 })

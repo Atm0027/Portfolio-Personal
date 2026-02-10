@@ -1,64 +1,47 @@
-<div class="container my-5">
-    <section class="wireframe-box">
-        <h2 class="text-center mb-4 section-title">Proyectos</h2>
-
-        <!-- Grid de proyectos -->
-        <div class="row g-4">
-            @for (project of projects; track project.id) {
-            <div class="col-md-6 col-lg-4">
-                <app-project-card [project]="project" (viewDetails)="onViewDetails($event)">
-                </app-project-card>
-            </div>
-            } @empty {
-            <div class="col-12 text-center">
-                <p class="text-muted">No hay proyectos disponibles.</p>
-            </div>
-            }
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2>Mi Portfolio</h2>
+            <p class="lead text-muted">Una selección de mis trabajos más recientes</p>
         </div>
 
-        <!-- Botón para refrescar -->
-        <div class="text-center mt-4">
-            <button class="btn btn-outline-primary" (click)="refreshProjects()">
-                <i class="bi bi-arrow-clockwise me-1"></i>
-                Actualizar proyectos
-            </button>
-        </div>
-    </section>
-</div>
+        <div *ngIf="projects && projects.length > 0; else noProjects" class="row">
 
-<!-- Modal de detalles -->
-@if (isModalOpen && selectedProject) {
-<div class="modal-backdrop fade show" (click)="closeModal()"></div>
-<div class="modal fade show d-block" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">
-                    <i class="bi bi-folder2-open me-2"></i>
-                    {{ selectedProject.name }}
-                </h5>
-                <button type="button" class="btn-close" (click)="closeModal()" aria-label="Cerrar"></button>
-            </div>
-            <div class="modal-body">
-                <p class="lead">{{ selectedProject.description }}</p>
+            <div class="col-md-4 mb-4" *ngFor="let project of projects">
 
-                <h6 class="mt-4">Tecnologías utilizadas:</h6>
-                <div class="technologies">
-                    @for (tech of selectedProject.technologies; track tech) {
-                    <span class="badge bg-primary me-1 mb-1">{{ tech }}</span>
-                    }
+                <div class="card h-100 shadow-sm">
+                    <img [src]="project.imageUrl || 'assets/placeholder.jpg'" class="card-img-top" [alt]="project.name">
+
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">{{ project.name | uppercase }}</h5>
+
+                        <p class="card-text">{{ project.description }}</p>
+
+                        <div class="mt-auto">
+                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                <span class="badge bg-secondary" *ngFor="let tech of project.technologies">
+                                    {{ tech }}
+                                </span>
+                            </div>
+
+                            <div class="d-flex justify-content-between">
+                                <a [href]="project.demoUrl" target="_blank" class="btn btn-primary btn-sm">Ver Demo</a>
+                                <a [href]="project.codeUrl" target="_blank"
+                                    class="btn btn-outline-dark btn-sm">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <a [href]="selectedProject.demoUrl" target="_blank" rel="noopener" class="btn btn-primary">
-                    <i class="bi bi-box-arrow-up-right me-1"></i> Ver Demo
-                </a>
-                <a [href]="selectedProject.codeUrl" target="_blank" rel="noopener" class="btn btn-outline-secondary">
-                    <i class="bi bi-github me-1"></i> Ver Código
-                </a>
-                <button type="button" class="btn btn-secondary" (click)="closeModal()">Cerrar</button>
+
             </div>
         </div>
+
+        <ng-template #noProjects>
+            <div class="alert alert-warning text-center" role="alert">
+                No hay proyectos disponibles en este momento.
+                <button class="btn btn-link" (click)="loadProjects()">Reintentar</button>
+            </div>
+        </ng-template>
+
     </div>
-</div>
-}
+</section>

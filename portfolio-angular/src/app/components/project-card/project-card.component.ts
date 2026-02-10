@@ -7,8 +7,7 @@ import { Project } from '../../models';
  */
 @Component({
     selector: 'app-project-card',
-    standalone: true,
-    imports: [],
+    standalone: false,
     templateUrl: './project-card.component.html',
     styleUrl: './project-card.component.css'
 })

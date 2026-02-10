@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectCardComponent } from '../../components/project-card/project-card.component';
-import { ProjectService } from '../../services';
-import { Project } from '../../models';
+import { PortfolioService } from '../../services';
+import { Project } from '../../interfaces/project.interface';
 
 /**
  * Componente de la página Portfolio
@@ -9,8 +9,7 @@ import { Project } from '../../models';
  */
 @Component({
     selector: 'app-portfolio',
-    standalone: true,
-    imports: [ProjectCardComponent],
+    standalone: false,
     templateUrl: './portfolio.component.html',
     styleUrl: './portfolio.component.css'
 })
@@ -24,7 +23,7 @@ export default class PortfolioComponent implements OnInit {
     /** Indica si el modal de detalles está visible */
     isModalOpen = false;
 
-    constructor(private projectService: ProjectService) { }
+    constructor(private portfolioService: PortfolioService) { }
 
     ngOnInit(): void {
         this.loadProjects();
@@ -33,9 +32,9 @@ export default class PortfolioComponent implements OnInit {
     /**
      * Carga los proyectos desde el servicio
      */
-    private loadProjects(): void {
+    loadProjects(): void {
         try {
-            this.projects = this.projectService.getProjects();
+            this.projects = this.portfolioService.getProjects();
         } catch (error: unknown) {
             console.error('Error al cargar proyectos:', error);
             this.projects = [];
@@ -62,6 +61,13 @@ export default class PortfolioComponent implements OnInit {
      * Refresca la lista de proyectos
      */
     refreshProjects(): void {
-        this.projects = this.projectService.refreshProjects();
+        this.projects = this.portfolioService.refreshProjects();
+    }
+
+    /**
+     * Función trackBy para *ngFor
+     */
+    trackProjectId(index: number, project: Project): number {
+        return project.id;
     }
 }

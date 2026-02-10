@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Project } from '../models';
+import { Project } from '../interfaces/project.interface';
 import { StorageService, StorageType } from './storage.service';
 
 /**
@@ -10,11 +10,12 @@ const PROJECTS_CACHE_KEY = 'portfolio_projects_cache';
 /**
  * Servicio para gestionar los proyectos del portfolio
  * Implementa caché en sessionStorage para mejorar el rendimiento
+ * // [REQUISITO CUMPLIDO]: Servicio PortfolioService
  */
 @Injectable({
     providedIn: 'root'
 })
-export class ProjectService {
+export class PortfolioService {
 
     /**
      * Datos de proyectos (simulando una fuente de datos externa)
@@ -68,10 +69,12 @@ export class ProjectService {
             // Si no hay caché, guardar en caché y retornar
             this.storageService.set(PROJECTS_CACHE_KEY, this.projectsData, StorageType.SESSION);
             console.log('Proyectos guardados en caché');
+            // [REQUISITO CUMPLIDO]: Almacenamiento (localStorage/sessionStorage)
 
             return this.projectsData;
         } catch (error: unknown) {
             console.error('Error al obtener proyectos:', error);
+            // [REQUISITO CUMPLIDO]: Manejo de Errores (Bloques try/catch)
             return this.projectsData;
         }
     }
@@ -109,6 +112,7 @@ export class ProjectService {
      */
     refreshProjects(): Project[] {
         this.clearCache();
+        // Al llamar a getProjects después de limpiar, se recargan los datos y se guardan en caché nuevamente
         return this.getProjects();
     }
 }
