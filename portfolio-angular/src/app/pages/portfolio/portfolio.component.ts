@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectCardComponent } from '../../components/project-card/project-card.component';
 import { PortfolioService } from '../../services';
-import { Project } from '../../interfaces/project.interface';
+import { Project } from '../../models';
 
 /**
  * Componente de la página Portfolio
@@ -13,7 +13,7 @@ import { Project } from '../../interfaces/project.interface';
     templateUrl: './portfolio.component.html',
     styleUrl: './portfolio.component.css'
 })
-export default class PortfolioComponent implements OnInit {
+export class PortfolioComponent implements OnInit {
     /** Lista de proyectos */
     projects: Project[] = [];
 

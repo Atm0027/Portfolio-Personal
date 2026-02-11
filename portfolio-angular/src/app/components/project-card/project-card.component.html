@@ -11,12 +11,8 @@
 
         <!-- Tecnologías -->
         <div class="technologies mb-3">
-            @for (tech of getDisplayedTechnologies(); track tech) {
-            <span class="badge bg-primary me-1 mb-1">{{ tech }}</span>
-            }
-            @if (hasMoreTechnologies()) {
-            <span class="badge bg-secondary">+{{ getExtraTechnologiesCount() }}</span>
-            }
+            <span class="badge bg-primary me-1 mb-1" *ngFor="let tech of getDisplayedTechnologies()">{{ tech }}</span>
+            <span *ngIf="hasMoreTechnologies()" class="badge bg-secondary">+{{ getExtraTechnologiesCount() }}</span>
         </div>
 
         <!-- Botones de acción -->

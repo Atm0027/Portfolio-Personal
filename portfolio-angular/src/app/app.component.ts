@@ -3,9 +3,10 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   standalone: false,
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
 })
-export class App {
+
+export class AppComponent {
   title = 'Portfolio Profesional - Alejandro Torres Muñoz';
 }

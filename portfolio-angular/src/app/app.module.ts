@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 
-import { App } from './app';
+import { AppComponent } from './app.component';
+// Pages
+import { HomeComponent } from './pages/home/home.component';
+import { PortfolioComponent } from './pages/portfolio/portfolio.component';
+import { ContactComponent } from './pages/contact/contact.component';
 // Components
-import HomeComponent from './pages/home/home.component';
-import PortfolioComponent from './pages/portfolio/portfolio.component';
-import ContactComponent from './components/contact/contact.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProjectCardComponent } from './components/project-card/project-card.component';
@@ -18,7 +20,7 @@ import { ThemeService } from './services/theme.service';
 
 @NgModule({
     declarations: [
-        App,
+        AppComponent,
         HomeComponent,
         PortfolioComponent,
         ContactComponent,
@@ -28,6 +30,7 @@ import { ThemeService } from './services/theme.service';
     ],
     imports: [
         BrowserModule,
+        CommonModule,
         AppRoutingModule,
         ReactiveFormsModule
     ],
@@ -36,6 +39,6 @@ import { ThemeService } from './services/theme.service';
         StorageService,
         ThemeService
     ],
-    bootstrap: [App]
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

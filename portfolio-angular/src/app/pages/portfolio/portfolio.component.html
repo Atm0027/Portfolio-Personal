@@ -5,34 +5,12 @@
             <p class="lead text-muted">Una selección de mis trabajos más recientes</p>
         </div>
 
+        <!-- Lista de proyectos con *ngIf y *ngFor -->
         <div *ngIf="projects && projects.length > 0; else noProjects" class="row">
-
-            <div class="col-md-4 mb-4" *ngFor="let project of projects">
-
-                <div class="card h-100 shadow-sm">
-                    <img [src]="project.imageUrl || 'assets/placeholder.jpg'" class="card-img-top" [alt]="project.name">
-
-                    <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">{{ project.name | uppercase }}</h5>
-
-                        <p class="card-text">{{ project.description }}</p>
-
-                        <div class="mt-auto">
-                            <div class="d-flex flex-wrap gap-2 mb-3">
-                                <span class="badge bg-secondary" *ngFor="let tech of project.technologies">
-                                    {{ tech }}
-                                </span>
-                            </div>
-
-                            <div class="d-flex justify-content-between">
-                                <a [href]="project.demoUrl" target="_blank" class="btn btn-primary btn-sm">Ver Demo</a>
-                                <a [href]="project.codeUrl" target="_blank"
-                                    class="btn btn-outline-dark btn-sm">GitHub</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+            <div class="col-md-4 mb-4" *ngFor="let project of projects; trackBy: trackProjectId">
+                <!-- Componente reutilizable con @Input y @Output -->
+                <app-project-card [project]="project" (viewDetails)="onViewDetails($event)">
+                </app-project-card>
             </div>
         </div>
 
@@ -42,6 +20,47 @@
                 <button class="btn btn-link" (click)="loadProjects()">Reintentar</button>
             </div>
         </ng-template>
+
+        <!-- Modal de detalles del proyecto -->
+        <div *ngIf="isModalOpen && selectedProject" class="modal-backdrop" (click)="closeModal()"></div>
+        <div *ngIf="isModalOpen && selectedProject" class="modal d-block" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">
+                            <i class="bi bi-folder2-open me-2"></i>
+                            {{ selectedProject.name | uppercase }}
+                        </h5>
+                        <button type="button" class="btn-close" (click)="closeModal()" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>{{ selectedProject.description }}</p>
+                        <div class="mb-3">
+                            <strong>Tecnologías:</strong>
+                            <div class="mt-2">
+                                <span class="badge bg-primary me-1 mb-1"
+                                    *ngFor="let tech of selectedProject.technologies">
+                                    {{ tech }}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <a [href]="selectedProject.demoUrl" target="_blank" rel="noopener noreferrer"
+                                class="btn btn-primary btn-sm">
+                                <i class="bi bi-box-arrow-up-right me-1"></i> Ver Demo
+                            </a>
+                            <a [href]="selectedProject.codeUrl" target="_blank" rel="noopener noreferrer"
+                                class="btn btn-outline-dark btn-sm">
+                                <i class="bi bi-github me-1"></i> Ver Código
+                            </a>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" (click)="closeModal()">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
 </section>

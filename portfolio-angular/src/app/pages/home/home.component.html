@@ -18,9 +18,7 @@
                 <div class="skills-container mt-3">
                     <strong>Habilidades:</strong>
                     <div class="skills-badges mt-2">
-                        @for (skill of skills; track skill) {
-                        <span class="badge skill-badge me-1 mb-1">{{ skill }}</span>
-                        }
+                        <span class="badge skill-badge me-1 mb-1" *ngFor="let skill of skills">{{ skill }}</span>
                     </div>
                 </div>
                 <div class="mt-4">
@@ -42,13 +40,11 @@
                     [class.bi-chevron-up]="isMoreInfoExpanded"></i>
                 Ver más información
             </button>
-            @if (isMoreInfoExpanded) {
-            <div class="card card-body mt-2 fade-in">
+            <div *ngIf="isMoreInfoExpanded" class="card card-body mt-2 fade-in">
                 <h5>Experiencia y Formación</h5>
                 <p>Graduado en Desarrollo de Aplicaciones Web con experiencia en proyectos full-stack.
                     Apasionado por crear soluciones web innovadoras y accesibles.</p>
             </div>
-            }
         </div>
     </section>
 
@@ -58,16 +54,16 @@
     <section id="video" class="wireframe-box">
         <h2 class="text-center mb-4 section-title">Video Presentación</h2>
 
-        <div class="text-center">
+        <div class="d-flex flex-column align-items-center">
             <video id="presentationVideo" class="rounded shadow video-player" width="100%" height="auto" controls
                 poster="assets/images/video-poster.jpg" preload="metadata" (ended)="onVideoEnded()">
                 <source src="assets/videos/presentacion.mp4" type="video/mp4">
                 <source src="assets/videos/presentacion.webm" type="video/webm">
                 Tu navegador no soporta el elemento de video.
             </video>
-            <button class="btn btn-success mt-3" id="playVideoBtn" (click)="playVideo()"
+            <button class="btn btn-primary mt-4 px-4 py-2" id="playVideoBtn" (click)="playVideo()"
                 title="Reproducir video presentación">
-                <i class="bi bi-play-circle me-1"></i> Reproducir Presentación
+                <i class="bi bi-play-circle me-2"></i> Reproducir Presentación
             </button>
         </div>
 
@@ -78,13 +74,11 @@
                 <i class="bi bi-info-circle me-1"></i>
                 Información sobre el video
             </button>
-            @if (isVideoInfoExpanded) {
-            <div class="card card-body mt-2 fade-in">
+            <div *ngIf="isVideoInfoExpanded" class="card card-body mt-2 fade-in">
                 <h5>📹 Sobre el Video</h5>
                 <p>Este video de presentación te ofrece una visión general de mi trayectoria profesional
                     y los proyectos en los que he trabajado.</p>
             </div>
-            }
         </div>
     </section>
 </div>

@@ -19,7 +19,7 @@ const DRAFT_KEY = 'portfolio_contact_draft';
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css'
 })
-export default class ContactComponent implements OnInit, OnDestroy {
+export class ContactComponent implements OnInit, OnDestroy {
   /** Formulario de contacto */
   contactForm!: FormGroup;
 
@@ -27,7 +27,7 @@ export default class ContactComponent implements OnInit, OnDestroy {
   formStatus: FormStatus = FormStatus.IDLE;
 
   /** Timeout ID para simular envío */
-  private submitTimeout: any;
+  private submitTimeout: ReturnType<typeof setTimeout> | null = null;
 
   /** Acceso al enum desde el template */
   FormStatus = FormStatus;
