@@ -13,11 +13,11 @@ portfolio-angular/
 │   │   ├── components/               # Componentes reutilizables
 │   │   │   ├── header/               # Navegación y switch de tema
 │   │   │   ├── footer/               # Pie de página con enlaces sociales
-│   │   │   ├── contact/              # Formulario de contacto
 │   │   │   └── project-card/         # Tarjeta de proyecto reutilizable
 │   │   ├── pages/                    # Páginas de la aplicación
 │   │   │   ├── home/                 # Sección "Sobre Mí"
-│   │   │   └── portfolio/            # Lista de proyectos
+│   │   │   ├── portfolio/            # Lista de proyectos
+│   │   │   └── contact/              # Formulario de contacto
 │   │   ├── services/                 # Servicios de la aplicación
 │   │   │   ├── storage.service.ts    # Gestión de localStorage/sessionStorage
 │   │   │   ├── theme.service.ts      # Tema claro/oscuro
@@ -31,8 +31,8 @@ portfolio-angular/
 │   │   │   └── index.ts             # Barrel export
 │   │   ├── app.module.ts            # Módulo raíz (NgModule)
 │   │   ├── app-routing.module.ts    # Módulo de enrutamiento
-│   │   ├── app.ts                   # Componente raíz
-│   │   └── app.html                 # Template raíz con <router-outlet>
+│   │   ├── app.component.ts         # Componente raíz
+│   │   └── app.component.html       # Template raíz con <router-outlet>
 │   ├── styles.css                   # Estilos globales
 │   └── main.ts                      # Bootstrap de la aplicación
 ```

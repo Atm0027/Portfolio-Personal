@@ -1,59 +1,39 @@
-# PortfolioAngular
+# Portfolio Profesional Angular
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.2.
+Aplicación SPA en Angular que transforma el portfolio profesional (antes en Bootstrap) en una app de una sola página con enrutamiento, componentes reutilizables, almacenamiento web y formularios reactivos.
 
-## Development server
+## Requisitos del proyecto
 
-To start a local development server, run:
+- **Componentes y páginas**: `Home`, `Portfolio`, `Contact`, `Header`, `Footer`, `ProjectCard`.
+- **Enrutamiento**: configurado en `app-routing.module.ts` con `<router-outlet>` en `app.component.html`.
+- **Formularios**: página `Contact` implementada con Angular Reactive Forms y validaciones.
+- **Almacenamiento web**:
+  - `localStorage` para preferencias de tema (`ThemeService`).
+  - `sessionStorage` para caché de proyectos y borrador del formulario (`PortfolioService`, `ContactComponent`, `StorageService`).
+- **TypeScript avanzado**: interfaces, enums, servicios tipados y manejo de errores con `try/catch`.
+
+Para más detalle técnico consulta `DOCUMENTACION.md`.
+
+## Cómo ejecutar el proyecto
+
+1. Instala las dependencias:
+
+```bash
+npm install
+```
+
+2. Arranca el servidor de desarrollo:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+3. Abre el navegador en `http://localhost:4200/`.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+## Build de producción
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Los artefactos se generarán en la carpeta `dist/`.
