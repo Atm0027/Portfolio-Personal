@@ -21,18 +21,12 @@ import { ThemeService } from './services/theme.service';
 @NgModule({
     declarations: [
         AppComponent,
-        HomeComponent,
-        PortfolioComponent,
-        ContactComponent,
         HeaderComponent,
-        FooterComponent,
-        ProjectCardComponent
+        FooterComponent
     ],
     imports: [
         BrowserModule,
-        CommonModule,
-        AppRoutingModule,
-        ReactiveFormsModule
+        AppRoutingModule
     ],
     providers: [
         PortfolioService,

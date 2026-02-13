@@ -1,13 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
-import { PortfolioComponent } from './pages/portfolio/portfolio.component';
-import { ContactComponent } from './pages/contact/contact.component';
+
 
 const routes: Routes = [
-    { path: 'home', component: HomeComponent },
-    { path: 'portfolio', component: PortfolioComponent },
-    { path: 'contact', component: ContactComponent },
+    { path: 'home', loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule) },
+    { path: 'portfolio', loadChildren: () => import('./pages/portfolio/portfolio.module').then(m => m.PortfolioModule) },
+    { path: 'contact', loadChildren: () => import('./pages/contact/contact.module').then(m => m.ContactModule) },
     { path: '', redirectTo: '/home', pathMatch: 'full' }, // Redirección por defecto
     { path: '**', redirectTo: '/home' } // Ruta wildcard para errores 404
 ];

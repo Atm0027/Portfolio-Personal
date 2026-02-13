@@ -7,6 +7,8 @@ import { StorageService, StorageType } from './storage.service';
  */
 const PROJECTS_CACHE_KEY = 'portfolio_projects_cache';
 
+import { PROJECTS_DATA } from '../data/projects.data';
+
 /**
  * Servicio para gestionar los proyectos del portfolio
  * Implementa caché en sessionStorage para mejorar el rendimiento
@@ -20,32 +22,7 @@ export class PortfolioService {
     /**
      * Datos de proyectos (simulando una fuente de datos externa)
      */
-    private readonly projectsData: Project[] = [
-        {
-            id: 1,
-            name: 'Portfolio Personal',
-            description: 'Sitio personal con una selección de proyectos, blog y CV interactivo. Diseño responsivo y despliegue continuo.',
-            demoUrl: 'https://example.com/portfolio',
-            codeUrl: 'https://github.com/Atm0027/Portfolio-Personal',
-            technologies: ['Angular', 'TypeScript', 'Bootstrap', 'CSS3']
-        },
-        {
-            id: 2,
-            name: 'App de Tareas',
-            description: 'Aplicación CRUD para gestión de tareas con autenticación, filtro por estado y API REST con Node.js.',
-            demoUrl: 'https://example.com/tasks',
-            codeUrl: 'https://github.com/Atm0027/Torres_Munoz_Alejandro_TaskFlow',
-            technologies: ['JavaScript', 'Node.js', 'Express', 'MongoDB']
-        },
-        {
-            id: 3,
-            name: 'Blog Estático',
-            description: 'Blog estático con contenido optimizado para SEO y pipeline de CI/CD para publicación automática.',
-            demoUrl: 'https://example.com/blog',
-            codeUrl: 'https://github.com/usuario/static-blog',
-            technologies: ['HTML5', 'CSS3', 'JavaScript', 'GitHub Actions']
-        }
-    ];
+    private readonly projectsData: Project[] = PROJECTS_DATA;
 
     constructor(private storageService: StorageService) { }
 

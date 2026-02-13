@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { ThemeService } from '../../services';
 
 /**
@@ -8,7 +8,8 @@ import { ThemeService } from '../../services';
     selector: 'app-header',
     standalone: false,
     templateUrl: './header.component.html',
-    styleUrl: './header.component.css'
+    styleUrl: './header.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent {
     /** Estado del menú móvil */

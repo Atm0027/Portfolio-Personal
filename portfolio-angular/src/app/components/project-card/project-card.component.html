@@ -1,4 +1,8 @@
 <div class="card h-100 project-card">
+    <!-- Imagen del proyecto -->
+    <img [src]="project.imageUrl || 'assets/images/placeholder-project.jpg'" class="card-img-top"
+        [alt]="'Imagen de ' + project.name" style="height: 200px; object-fit: cover;">
+
     <div class="card-body d-flex flex-column">
         <h5 class="card-title">
             <i class="bi bi-folder2-open me-2"></i>
@@ -17,16 +21,14 @@
 
         <!-- Botones de acción -->
         <div class="d-flex gap-2 flex-wrap">
-            <a [href]="project.demoUrl" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
-                <i class="bi bi-box-arrow-up-right me-1"></i>
-                Demo
-            </a>
+
             <a [href]="project.codeUrl" target="_blank" rel="noopener noreferrer"
-                class="btn btn-outline-secondary btn-sm">
+                class="btn btn-outline-secondary btn-sm" [attr.aria-label]="'Ver código fuente de ' + project.name">
                 <i class="bi bi-github me-1"></i>
                 Código
             </a>
-            <button type="button" class="btn btn-outline-primary btn-sm ms-auto" (click)="onViewDetails()">
+            <button type="button" class="btn btn-outline-primary btn-sm ms-auto" (click)="onViewDetails()"
+                [attr.aria-label]="'Ver más detalles de ' + project.name">
                 <i class="bi bi-eye me-1"></i>
                 Detalles
             </button>

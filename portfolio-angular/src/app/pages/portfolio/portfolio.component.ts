@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ProjectCardComponent } from '../../components/project-card/project-card.component';
 import { PortfolioService } from '../../services';
 import { Project } from '../../models';
@@ -11,7 +11,8 @@ import { Project } from '../../models';
     selector: 'app-portfolio',
     standalone: false,
     templateUrl: './portfolio.component.html',
-    styleUrl: './portfolio.component.css'
+    styleUrl: './portfolio.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PortfolioComponent implements OnInit {
     /** Lista de proyectos */

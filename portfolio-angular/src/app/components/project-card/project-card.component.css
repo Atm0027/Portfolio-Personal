@@ -75,8 +75,8 @@
 
 /* Dark theme */
 :host-context(.dark-theme) .project-card {
-    background-color: #1f2937;
-    border-color: #374151;
+    background-color: var(--color-surface);
+    border-color: var(--color-border);
 }
 
 :host-context(.dark-theme) .project-card:hover {
@@ -84,7 +84,7 @@
 }
 
 :host-context(.dark-theme) .card-title {
-    color: #f9fafb;
+    color: var(--color-primary);
 }
 
 :host-context(.dark-theme) .card-title i {
@@ -92,7 +92,7 @@
 }
 
 :host-context(.dark-theme) .card-text {
-    color: #d1d5db;
+    color: var(--color-secondary);
 }
 
 :host-context(.dark-theme) .technologies .badge.bg-secondary {

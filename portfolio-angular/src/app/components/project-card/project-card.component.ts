@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { Project } from '../../models';
 
 /**
@@ -9,7 +9,8 @@ import { Project } from '../../models';
     selector: 'app-project-card',
     standalone: false,
     templateUrl: './project-card.component.html',
-    styleUrl: './project-card.component.css'
+    styleUrl: './project-card.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProjectCardComponent {
     /** Proyecto a mostrar */

@@ -1,7 +1,8 @@
 /* Footer Component Styles */
 
 footer {
-    background: linear-gradient(135deg, #1f2937, #111827);
+    background: linear-gradient(135deg, var(--color-surface), #111827);
+    /* Keeping one dark color for specific gradient effect or use mix */
     animation: fadeIn 1.5s ease-out;
 }
 

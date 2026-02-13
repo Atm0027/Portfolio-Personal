@@ -76,28 +76,28 @@
 
 /* Dark theme styles */
 :host-context(.dark-theme) .navbar {
-  background-color: #1f2937 !important;
+  background-color: var(--color-surface) !important;
 }
 
 :host-context(.dark-theme) .navbar-brand span {
-  color: #f3f4f6;
+  color: var(--color-primary);
 }
 
 :host-context(.dark-theme) .nav-link {
-  color: #d1d5db;
+  color: var(--color-secondary);
 }
 
 :host-context(.dark-theme) .nav-link:hover,
 :host-context(.dark-theme) .nav-link.active {
-  color: #60a5fa;
+  color: #60a5fa; /* Keep specific highlight color or use var if available */
 }
 
 :host-context(.dark-theme) .theme-toggle {
   border-color: #4b5563;
-  color: #d1d5db;
+  color: var(--color-secondary);
 }
 
 :host-context(.dark-theme) .theme-toggle:hover {
-  background-color: #374151;
+  background-color: var(--color-border);
   border-color: #6b7280;
 }
