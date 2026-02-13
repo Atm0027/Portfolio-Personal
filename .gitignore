@@ -8,3 +8,8 @@
 # Thumbnails
 ehthumbs.db
 Thumbs.db
+
+# Angular
+portfolio-angular/node_modules/
+portfolio-angular/dist/
+portfolio-angular/.angular/
