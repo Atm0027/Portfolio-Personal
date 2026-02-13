@@ -22,13 +22,12 @@ portfolio-angular/
 │   │   │   ├── storage.service.ts    # Gestión de localStorage/sessionStorage
 │   │   │   ├── theme.service.ts      # Tema claro/oscuro
 │   │   │   ├── portfolio.service.ts  # Datos de proyectos con caché
-│   │   │   └── index.ts             # Barrel export
-│   │   ├── interfaces/               # Interfaces TypeScript
-│   │   │   └── project.interface.ts  # Interfaz Project
-│   │   ├── models/                   # Modelos y enumerados
+│   │   │   └── index.ts              # Barrel export
+│   │   ├── models/                   # Modelos, interfaces y enumerados
+│   │   │   ├── project.interface.ts           # Interfaz Project
 │   │   │   ├── contact-form.interface.ts     # Interfaz ContactFormData + Enum FormStatus
 │   │   │   ├── user-preferences.interface.ts # Interfaz UserPreferences + Enum ThemeMode
-│   │   │   └── index.ts             # Barrel export
+│   │   │   └── index.ts                      # Barrel export
 │   │   ├── app.module.ts            # Módulo raíz (NgModule)
 │   │   ├── app-routing.module.ts    # Módulo de enrutamiento
 │   │   ├── app.component.ts         # Componente raíz
@@ -187,3 +186,4 @@ ng build
 | `*ngFor` | ✅ | Home, Portfolio, Footer, ProjectCard |
 | `*ngIf` | ✅ | Home, Contact, Portfolio, ProjectCard |
 | Pipes (`date`, `uppercase`) | ✅ | Footer, Portfolio |
+
