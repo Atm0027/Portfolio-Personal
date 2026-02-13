@@ -106,20 +106,6 @@ export class ThemeService {
     }
 
     /**
-     * Obtiene el tema actual
-     */
-    getTheme(): ThemeMode {
-        return this.currentTheme();
-    }
-
-    /**
-     * Obtiene el signal del tema para suscripción reactiva
-     */
-    getThemeSignal() {
-        return this.currentTheme.asReadonly();
-    }
-
-    /**
      * Establece un tema específico
      */
     setTheme(theme: ThemeMode): void {
@@ -142,12 +128,5 @@ export class ThemeService {
      */
     isDarkTheme(): boolean {
         return this.currentTheme() === ThemeMode.DARK;
-    }
-
-    /**
-     * Obtiene las preferencias de usuario
-     */
-    getPreferences(): UserPreferences {
-        return this.preferences();
     }
 }

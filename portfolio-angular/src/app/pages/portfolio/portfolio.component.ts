@@ -58,13 +58,6 @@ export class PortfolioComponent implements OnInit {
     }
 
     /**
-     * Refresca la lista de proyectos
-     */
-    refreshProjects(): void {
-        this.projects = this.portfolioService.refreshProjects();
-    }
-
-    /**
      * Función trackBy para *ngFor
      */
     trackProjectId(index: number, project: Project): number {

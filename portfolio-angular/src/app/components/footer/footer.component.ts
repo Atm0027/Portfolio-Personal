@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { DatePipe } from '@angular/common';
 
 /**
  * Componente de pie de página
@@ -19,17 +18,20 @@ export class FooterComponent {
     {
       name: 'LinkedIn',
       url: 'https://www.linkedin.com/in/alejandro-torres-mu%C3%B1oz-745341351/',
-      icon: 'bi-linkedin'
+      icon: 'bi-linkedin',
+      external: true
     },
     {
       name: 'GitHub',
       url: 'https://github.com/Atm0027',
-      icon: 'bi-github'
+      icon: 'bi-github',
+      external: true
     },
     {
       name: 'Teléfono',
       url: 'tel:+34624613932',
-      icon: 'bi-telephone'
+      icon: 'bi-telephone',
+      external: false
     }
   ];
 }

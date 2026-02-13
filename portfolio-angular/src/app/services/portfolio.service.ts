@@ -78,41 +78,4 @@ export class PortfolioService {
             return this.projectsData;
         }
     }
-
-    /**
-     * Obtiene un proyecto por su ID
-     */
-    getProjectById(id: number): Project | undefined {
-        const projects = this.getProjects();
-        return projects.find(project => project.id === id);
-    }
-
-    /**
-     * Filtra proyectos por tecnología
-     */
-    getProjectsByTechnology(technology: string): Project[] {
-        const projects = this.getProjects();
-        return projects.filter(project =>
-            project.technologies.some(tech =>
-                tech.toLowerCase().includes(technology.toLowerCase())
-            )
-        );
-    }
-
-    /**
-     * Limpia la caché de proyectos
-     */
-    clearCache(): void {
-        this.storageService.remove(PROJECTS_CACHE_KEY, StorageType.SESSION);
-        console.log('Caché de proyectos limpiada');
-    }
-
-    /**
-     * Refresca los datos de proyectos (simula una recarga desde servidor)
-     */
-    refreshProjects(): Project[] {
-        this.clearCache();
-        // Al llamar a getProjects después de limpiar, se recargan los datos y se guardan en caché nuevamente
-        return this.getProjects();
-    }
 }

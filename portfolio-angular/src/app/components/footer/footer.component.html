@@ -4,7 +4,9 @@
             &copy; {{ currentYear | date:'yyyy' }} Alejandro Torres Muñoz. Todos los derechos reservados.
         </p>
         <div class="social-links">
-            <a *ngFor="let link of socialLinks" [href]="link.url" target="_blank" rel="noopener noreferrer"
+            <a *ngFor="let link of socialLinks" [href]="link.url"
+                [attr.target]="link.external ? '_blank' : null"
+                [attr.rel]="link.external ? 'noopener noreferrer' : null"
                 class="text-white me-3" [title]="link.name">
                 <i class="bi" [ngClass]="link.icon"></i>
                 {{ link.name }}

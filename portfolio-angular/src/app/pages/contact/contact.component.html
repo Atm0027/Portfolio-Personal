@@ -41,7 +41,7 @@
                 <input id="terms" type="checkbox" formControlName="termsAccepted" class="form-check-input"
                     [class.is-invalid]="isFieldInvalid('termsAccepted')">
                 <label for="terms" class="form-check-label">
-                    Acepto los <a href="#" class="terms-link">términos y condiciones</a>.
+                    Acepto los <a href="#" class="terms-link" (click)="$event.preventDefault()" title="Próximamente">términos y condiciones</a>.
                 </label>
                 <div *ngIf="hasError('termsAccepted', 'required')" class="invalid-feedback">Debes aceptar los términos y
                     condiciones.</div>

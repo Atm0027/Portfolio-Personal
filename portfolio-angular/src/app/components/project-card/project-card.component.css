@@ -79,10 +79,39 @@
     border-color: #374151;
 }
 
+:host-context(.dark-theme) .project-card:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
 :host-context(.dark-theme) .card-title {
-    color: #f3f4f6;
+    color: #f9fafb;
+}
+
+:host-context(.dark-theme) .card-title i {
+    color: #60a5fa;
 }
 
 :host-context(.dark-theme) .card-text {
-    color: #9ca3af;
+    color: #d1d5db;
+}
+
+:host-context(.dark-theme) .technologies .badge.bg-secondary {
+    background-color: #4b5563 !important;
+    color: #e5e7eb;
+}
+
+:host-context(.dark-theme) .btn-outline-secondary {
+    border-color: #6b7280;
+    color: #e5e7eb;
+}
+
+:host-context(.dark-theme) .btn-outline-secondary:hover {
+    background-color: #4b5563;
+    border-color: #6b7280;
+    color: #f9fafb;
+}
+
+:host-context(.dark-theme) .btn-outline-primary {
+    border-color: #60a5fa;
+    color: #60a5fa;
 }

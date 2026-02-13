@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
 import { ThemeService } from '../../services';
-import { ThemeMode } from '../../models';
 
 /**
  * Componente de cabecera con navegación y switch de tema

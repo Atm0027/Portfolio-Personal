@@ -55,16 +55,12 @@
         <h2 class="text-center mb-4 section-title">Video Presentación</h2>
 
         <div class="d-flex flex-column align-items-center">
-            <video id="presentationVideo" class="rounded shadow video-player" width="100%" height="auto" controls
-                poster="assets/images/video-poster.jpg" preload="metadata" (ended)="onVideoEnded()">
+            <video class="rounded shadow video-player" width="100%" height="auto" controls
+                poster="assets/images/video-poster.jpg" preload="metadata">
                 <source src="assets/videos/presentacion.mp4" type="video/mp4">
                 <source src="assets/videos/presentacion.webm" type="video/webm">
                 Tu navegador no soporta el elemento de video.
             </video>
-            <button class="btn btn-primary mt-4 px-4 py-2" id="playVideoBtn" (click)="playVideo()"
-                title="Reproducir video presentación">
-                <i class="bi bi-play-circle me-2"></i> Reproducir Presentación
-            </button>
         </div>
 
         <!-- Información sobre el video -->

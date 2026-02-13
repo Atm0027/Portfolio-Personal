@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
 
 /**
  * Componente de la página Home (Sobre Mí)
@@ -32,29 +31,5 @@ export class HomeComponent {
    */
   toggleVideoInfo(): void {
     this.isVideoInfoExpanded = !this.isVideoInfoExpanded;
-  }
-
-  /**
-   * Reproduce el video de presentación
-   */
-  playVideo(): void {
-    const video = document.getElementById('presentationVideo') as HTMLVideoElement;
-    if (video) {
-      video.play();
-      const playBtn = document.getElementById('playVideoBtn');
-      if (playBtn) {
-        playBtn.style.display = 'none';
-      }
-    }
-  }
-
-  /**
-   * Maneja el evento cuando el video termina
-   */
-  onVideoEnded(): void {
-    const playBtn = document.getElementById('playVideoBtn');
-    if (playBtn) {
-      playBtn.style.display = 'block';
-    }
   }
 }
