@@ -1,39 +1,52 @@
-# Portfolio Profesional Angular
+# Professional Portfolio
 
-Aplicación SPA en Angular que transforma el portfolio profesional (antes en Bootstrap) en una app de una sola página con enrutamiento, componentes reutilizables, almacenamiento web y formularios reactivos.
+A dynamic, responsive Single Page Application (SPA) built with Angular and Bootstrap 5. This project showcases professional experience, skills, and technical projects in a modern, optimized web interface.
 
-## Requisitos del proyecto
+## Key Features
 
-- **Componentes y páginas**: `Home`, `Portfolio`, `Contact`, `Header`, `Footer`, `ProjectCard`.
-- **Enrutamiento**: configurado en `app-routing.module.ts` con `<router-outlet>` en `app.component.html`.
-- **Formularios**: página `Contact` implementada con Angular Reactive Forms y validaciones.
-- **Almacenamiento web**:
-  - `localStorage` para preferencias de tema (`ThemeService`).
-  - `sessionStorage` para caché de proyectos y borrador del formulario (`PortfolioService`, `ContactComponent`, `StorageService`).
-- **TypeScript avanzado**: interfaces, enums, servicios tipados y manejo de errores con `try/catch`.
+- **Single Page Application (SPA)**: Smooth navigation without page reloads using Angular Router.
+- **Responsive Design**: Fully adaptable layout for mobile, tablet, and desktop devices via Bootstrap 5.
+- **Dark/Light Mode**: Dynamic theme switching with persistence.
+- **Type Safety**: Built with strict TypeScript for reliability.
+- **Component-Based Architecture**: Modular and reusable code structure.
 
-Para más detalle técnico consulta `DOCUMENTACION.md`.
+## Quick Start
 
-## Cómo ejecutar el proyecto
+### Prerequisites
+- Node.js
+- Angular CLI
 
-1. Instala las dependencias:
+### Installation
 
-```bash
-npm install
-```
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd portfolio-angular
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-2. Arranca el servidor de desarrollo:
+### Development Server
 
+Run the development server:
 ```bash
 ng serve
 ```
+Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-3. Abre el navegador en `http://localhost:4200/`.
+### Build
 
-## Build de producción
-
+Build the project for production:
 ```bash
 ng build
 ```
+The build artifacts will be stored in the `dist/` directory.
 
-Los artefactos se generarán en la carpeta `dist/`.
+## Documentation
+
+For a detailed explanation of the project structure, logic, and technologies used, please refer to [DOCUMENTATION.md](./DOCUMENTATION.md).
