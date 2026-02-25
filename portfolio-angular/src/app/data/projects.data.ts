@@ -28,7 +28,7 @@ export const PROJECTS_DATA: Project[] = [
         name: 'Blog Estático',
         description: 'Blog estático con contenido optimizado para SEO y pipeline de CI/CD para publicación automática.',
 
-        codeUrl: 'https://github.com/usuario/static-blog',
+        codeUrl: 'https://github.com/Atm0027/static-blog',
         technologies: ['HTML5', 'CSS3', 'JavaScript', 'GitHub Actions'],
         imageUrl: 'https://placehold.co/600x400/27ae60/ffffff?text=Blog+Estático'
     }

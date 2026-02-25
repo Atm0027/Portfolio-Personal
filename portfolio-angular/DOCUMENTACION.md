@@ -10,7 +10,7 @@ Este proyecto es una Aplicación de Página Única (SPA) desarrollada con Angula
 | **Angular** | Marco principal para estructura, inyección de dependencias y rendimiento. |
 | **TypeScript** | Añade tipado estático a JavaScript para una mejor mantenibilidad y confiabilidad ante errores. |
 | **Bootstrap 5** | Marco de UI para sistemas de cuadrícula responsivos y estilizado base. |
-| **RxJS** | Maneja operaciones asíncronas y flujos de eventos. |
+
 
 ## 3. Estructura del Proyecto
 El código fuente está organizado modularmente dentro de `src/app`:
@@ -25,6 +25,7 @@ El código fuente está organizado modularmente dentro de `src/app`:
     - `project-card`: Componente reutilizable para mostrar detalles del proyecto.
 - **`services/`**: Lógica de negocio y gestión de estado.
 - **`models/`**: Interfaces y enumeraciones de TypeScript para seguridad de tipos.
+- **`data/`**: Datos estáticos del proyecto (ej. `projects.data.ts`).
 - **`shared/`**: Utilidades comunes.
 
 ## 4. Componentes y Enrutamiento
@@ -47,7 +48,7 @@ La aplicación utiliza Angular Router para la navegación, cargando componentes 
 El proyecto personaliza Bootstrap 5 utilizando variables CSS globales en `styles.css` para asegurar una identidad de marca única y consistente.
 
 ### Variables Globales
-- **Colores**: Definidos para fondo, superficie, texto primario y acentos (`--accent-start`, `--accent-end`).
+- **Colores**: Variables CSS para fondo (`--color-bg`), superficie (`--color-surface`), texto (`--color-primary`, `--color-secondary`) y acentos (`--accent-start`, `--accent-end`).
 - **Tipografía**: Utiliza 'Poppins' como la familia de fuentes primaria.
 
 ### Modo Oscuro
@@ -65,7 +66,7 @@ Los servicios centralizan la lógica y el estado, siguiendo el patrón Singleton
 - Implementa **caché** vía `sessionStorage` para prevenir la recuperación redundante de datos durante una sesión.
 
 ### `ThemeService`
-- Controla el tema Claro/Oscuro.
+- Controla el tema Claro/Oscuro utilizando **Angular Signals** (`signal<ThemeMode>`) para reactividad.
 - Persiste la preferencia del usuario en **localStorage** para que la configuración sobreviva a los reinicios del navegador.
 - Reacciona a las preferencias del sistema (`prefers-color-scheme`).
 
@@ -79,4 +80,4 @@ Los servicios centralizan la lógica y el estado, siguiendo el patrón Singleton
 ### Formularios
 El `ContactComponent` asegura la integridad de los datos utilizando:
 - **Validadores**: Campos requeridos, formato de correo electrónico.
-- **Preservación de Estado**: Guarda el contenido del borrador en `sessionStorage` automáticamente, restaurándolo si el usuario navega fuera y regresa accidentalmente.
+- **Preservación de Estado**: Guarda el contenido del borrador en `sessionStorage` al salir del componente (`ngOnDestroy`), restaurándolo si el usuario navega fuera y regresa accidentalmente.
